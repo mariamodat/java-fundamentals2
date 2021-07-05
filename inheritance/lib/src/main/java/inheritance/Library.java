@@ -7,6 +7,7 @@ public class Library {
 
   public static  void Main (String[] args){
     Restaurant res1= new Restaurant("Mariam" ,4,80);
+    Review rev1 = new Review("mariam","cool and delicious" ,4);
     System.out.println(res1);
 
   }

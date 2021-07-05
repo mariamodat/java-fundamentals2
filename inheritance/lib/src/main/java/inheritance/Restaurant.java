@@ -2,11 +2,14 @@ package inheritance;
 
 import java.util.ArrayList;
 
-public class Restaurant implements Reviewable {
+public class Restaurant  {
   private String name ="";
   private int stars =0;
   private int priceCategory= 0;
-  private ArrayList<Review> reviews;
+  protected ArrayList<Review> reviews;
+
+  public Restaurant(ArrayList<Review> reviews) {
+  }
 
   public String getName() {
     return name;
@@ -21,7 +24,10 @@ public class Restaurant implements Reviewable {
   }
 
   public void setStars(int stars) {
-    this.stars = stars;
+
+    if (stars>0 || stars <6)
+      this.stars = stars;
+
   }
 
   public int getPriceCategory() {
@@ -40,13 +46,15 @@ public class Restaurant implements Reviewable {
 
   }
 
+
+
   public String toString(){
     String result;
     result= "the Restaurant "+this.name + "has " +this.stars +"stars" + this.priceCategory +"$";
     return  result;}
 
-  @Override
-  public void addReview(Review review) {
-    reviews.add(review);
-  }
+//  @Override
+//  public void addReview(Review review) {
+//    reviews.add(review);
+//  }
 }
