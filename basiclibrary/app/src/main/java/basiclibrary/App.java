@@ -175,23 +175,25 @@ public class App {
     // 4. calculating the Average of array of arrays:
     public static int[] averageOfNestedArrays() {
         // Daily average temperatures for Seattle, October 1-28 2017
-        int avg = 0;
+        double avg = 0;
+        int sum = 0;
         int x = 0;
-        int lowest = 0;
+        double lowest = 100;
         int[][] weeklyMonthTemperatures = { { 66, 64, 58, 65, 71, 57, 60 }, { 57, 65, 65, 70, 72, 65, 51 },
                 { 55, 54, 60, 53, 59, 57, 61 }, { 65, 56, 55, 52, 55, 62, 57 } };
 
         for (int i = 0; i < weeklyMonthTemperatures.length; i++) {
 
             avg = 0;
+            sum = 0;
             for (int el : weeklyMonthTemperatures[i]) {
-                avg += el;
-                lowest = avg;
+                sum += el;
+            }
 
-                if (lowest > avg) {
-                    lowest = avg;
-                    x = i;
-                }
+            avg = sum / weeklyMonthTemperatures[i].length;
+            if (lowest > avg) {
+                lowest = avg;
+                x = i;
             }
         }
 
