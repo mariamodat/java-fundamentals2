@@ -14,12 +14,16 @@ public class Review {
 
   }
 
-  public Review (String author , String body,int stars ,Restaurant restaurant){
+//  public Review (String author , String body,int stars ,Restaurant restaurant){
+//
+//    this.author=author;
+//    this.body=body;
+//    this.stars=stars;
+//    this.restaurant=restaurant;
+//
+//  }
 
-    this.author=author;
-    this.body=body;
-    this.stars=stars;
-    this.restaurant=restaurant;
+  public Review() {
 
   }
 
