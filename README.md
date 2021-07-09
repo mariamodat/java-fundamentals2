@@ -1,6 +1,6 @@
 # java-fundamentals
 ## Lab 02 / Arrays, for loops, testing
-**BasicLibrary directory** 
+**Basics directory** 
 
 ## Lab 03 / Maps and File I/O
 **BasicLibrary directory** 
