@@ -10,3 +10,13 @@ For the JS linter, create a new Java application inside of java-fundamentals by 
 
 ##  Inheritance22 directory
 **lab  06 & 07 Composition and Inheritance**   
+
+# Table of content 
+
+|Directory | Subject |
+|----------|---------|
+|basics | [Lab 02 / Arrays, for loops, testing](basics) |
+| basiclibrary | [Lab 03 / Maps and File I/O](basiclibrary) |
+| inheritance | [lab  06 & 07 Composition and Inheritance](inheritance)|
+
+
