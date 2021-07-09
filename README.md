@@ -8,5 +8,5 @@ For the first two methods in today’s lab, continue working in your basiclibrar
 
 For the JS linter, create a new Java application inside of java-fundamentals by creating a new directory called linter, cding into it, and running gradle init --type java-application. Download the gates.js file, and save it in the resources directory within linter.
 
-##  Inheritance22 directory
+##  Inheritance directory
 **lab  06 & 07 Composition and Inheritance**   
