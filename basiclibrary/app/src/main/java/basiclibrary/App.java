@@ -65,11 +65,11 @@ public class App {
             }
         }
 
-        System.out.println(Arrays.toString(roll(3)));
+        System.out.println("the roll method :  "+Arrays.toString(roll(3)));
         containsDuplicates();
         int[] xx = { 1, 2, 3, 4 };
-        System.out.println(averageOfArray(xx));
-        System.out.println(Arrays.toString(averageOfNestedArrays()));
+        System.out.println("Avg of an arr :  "+averageOfArray(xx));
+        System.out.println("the Avg of nested Arr :  "+Arrays.toString(averageOfNestedArrays()));
 
     }
 
