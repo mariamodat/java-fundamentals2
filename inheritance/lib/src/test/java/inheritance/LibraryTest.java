@@ -4,8 +4,11 @@
 package inheritance;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.ArrayList;
+
+import static org.junit.jupiter.api.Assertions.*;
+ // Lab 06 Tests :
 class LibraryTest {
     @Test void someLibraryMethodReturnsTrue() {
         Library classUnderTest = new Library();
@@ -51,4 +54,47 @@ class LibraryTest {
     assertEquals(4,restaurant.getStars());
   }
 
+  // Lab 07 Tests :
+   @Test
+   public void shopClassTest (){
+     Shop shop = new Shop("mariam","hi",2);
+     assertEquals("mariam",shop.getName());
+     assertEquals("hi",shop.getDescription());
+     assertEquals(2,shop.getDollarSigns());
+   }
+   @Test
+   public void testAddReview() {
+     Shop shop = new Shop("Roosevelt Field","Mall in Garden City",4);
+     Review review = new Review("Mariam", "is Cute", 4);
+     Review review1 = new Review("Mariam", "is Cute", 3);
+     Review review2 = new Review("Mariam", "is Cute", 5);
+     shop.addReview(review);
+     shop.addReview(review1);
+     shop.addReview(review2);
+     assertEquals(4,shop.getStars());
+   }
+
+   @Test
+   public void testTheaterAddMovies(){
+     Theater theater = new Theater("AMC Pike",new ArrayList<>(),new ArrayList<>());
+     theater.addMovie("Avengers");
+     theater.addMovie("Bad Moms");
+     theater.addMovie("Aladdin");
+     assertTrue(theater.getMovies().contains("Aladdin"));
+
+   }
+
+   @Test
+   public void testTheaterRemoveMovies() throws IllegalAccessException {
+     Theater theater = new Theater("AMC Pike",new ArrayList<>(),new ArrayList<>());
+     theater.addMovie("Avengers");
+     theater.addMovie("Bad Moms");
+     theater.addMovie("Aladdin");
+
+     theater.removeMovie("Aladdin");
+     assertFalse(theater.getMovies().contains("Aladdin"));
+
+   }
+
 }
+

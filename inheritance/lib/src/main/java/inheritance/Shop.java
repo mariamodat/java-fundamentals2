@@ -6,10 +6,18 @@ public class Shop extends Review implements Reviewable  {
   private int dollarSigns;
   protected ArrayList<Review> reviews = new ArrayList<>();
 
+  public ArrayList<Review> getReviews() {
+    return reviews;
+  }
+
   public Shop(String name, String description, int dollarSigns) {
     this.name = name;
     this.description = description;
     this.dollarSigns = dollarSigns;
+
+  }
+
+  public Shop() {
 
   }
 
@@ -27,19 +35,12 @@ public class Shop extends Review implements Reviewable  {
 
   @Override
   public void addReview(Review review) {
-
-    if (reviews.size()==0){
-      reviews.add(review);
-
+    this.getReviews().add(review);
+    int sum = 0;
+    for (Review val: this.getReviews()) {
+      sum += val.getStars();
     }
-    else {
-      for (Review rev : reviews){
-        if (rev.getAuthor()==name){
-          System.out.println(" Adding Review once only! ");
-        }
-        else {reviews.add(rev);
-        rev.setBody(rev.getBody());}
-      }
-    }
+    this.setStars(sum / this.getReviews().size());
   }
+
 }
