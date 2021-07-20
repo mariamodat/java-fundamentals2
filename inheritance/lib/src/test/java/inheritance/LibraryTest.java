@@ -13,10 +13,42 @@ class LibraryTest {
     }
 
 
-//  @Test public void RestaurantConstTest() {
-//    Restaurant restaurant = new Restaurant("Mariam", 5 ,90);
-//    System.out.println("Restaurant: toSting: " + restaurant);
-//    assertEquals("restaurant name should return 'Mariam'","Mariam", restaurant.getName());
-//  }
+
+  @Test public void RestaurantConstTest() {
+    Restaurant restaurant = new Restaurant("Mariam", 5 ,90);
+
+    assertEquals("Mariam", restaurant.getName());
+    assertEquals(5, restaurant.getStars());
+    assertEquals(90, restaurant.getPriceCategory());
+  }
+
+  @Test public void toStringTest() {
+    Restaurant restaurant = new Restaurant("Mariam", 5 ,90);
+
+    assertEquals("the Restaurant Mariamhas 5 AS RATE90$", restaurant.toString());
+  }
+
+  @Test public void ReviewConstructorTest(){
+      Review review= new Review("Mariam","is Cute" ,4);
+      assertEquals("Mariam",review.getAuthor());
+      assertEquals("is Cute",review.getBody());
+      assertEquals(4,review.getStars());
+  }
+
+  @Test public void ReviewToStringTest() {
+    Review review = new Review("Mariam", "is Cute", 4);
+    assertEquals("the Restaurant Mariamvoted 4starsis Cute      7", review.toString());
+  }
+
+
+  @Test
+  public  void addReviewTest(){
+    Restaurant restaurant = new Restaurant();
+    Review review = new Review("Mariam", "is Cute", 4);
+    Review review1 = new Review("Mariam", "is Cute", 3);
+    Review review2 = new Review("Mariam", "is Cute", 5);
+    restaurant.addReview(review);
+    assertEquals(4,restaurant.getStars());
+  }
 
 }

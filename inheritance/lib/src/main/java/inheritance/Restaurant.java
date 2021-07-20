@@ -8,6 +8,14 @@ public class Restaurant extends Review implements Reviewable{
   private int priceCategory= 0;
   protected ArrayList<Review> reviews = new ArrayList<>();
 
+  public Restaurant() {
+
+  }
+
+  public ArrayList<Review> getReviews() {
+    return reviews;
+  }
+
   public Restaurant (String name , int stars , int priceCategory ){
     this.name=name ;
     this.stars=stars;
@@ -43,22 +51,13 @@ public class Restaurant extends Review implements Reviewable{
     result= "the Restaurant "+this.name + "has " +this.stars +" AS RATE" + this.priceCategory +"$";
     return  result;}
 
-  public void addReview (Review review){
-if (reviews.size()==0 ){
-  reviews.add(review);
-}
-else {
-  for (Review rev : reviews){
-    if (rev.getAuthor()== name){
-      System.out.println("  Adding reviews is allowed only once! ");
+  public void addReview(Review review){
+    this.getReviews().add(review);
+    int sum = 0;
+    for (Review val: this.getReviews()) {
+      sum += val.getStars();
     }
-    else {
-      reviews.add(rev);
-      setStars(rev.getStars());
-    }
-  }
-}
-
+    this.setStars(sum / this.getReviews().size());
   }
 
 }
